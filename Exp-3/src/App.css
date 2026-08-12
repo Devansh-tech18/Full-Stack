@@ -1,0 +1,365 @@
+/* src/App.css - PREMIUM GLASSMORPHISM THEME */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 1. Animated Gradient Background */
+body {
+  background: linear-gradient(-45deg, #4158D0, #C850C0, #FFCC70, #4158D0);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #1e293b;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Core Glass Effect Reusable Class */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border-radius: 1rem;
+}
+
+/* =========================================
+   2. NAVBAR STYLES
+========================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #111827;
+  letter-spacing: -0.5px;
+}
+
+.nav-links a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #334155;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #C850C0;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links .admin-link {
+  color: #be123c;
+}
+
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-badge {
+  background: linear-gradient(135deg, #4158D0, #C850C0);
+  color: white;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(200, 80, 192, 0.3);
+}
+
+.btn-logout {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid white;
+  padding: 0.4rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-logout:hover {
+  background-color: white;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   3. LOGIN PAGE STYLES
+========================================= */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+}
+
+.login-card {
+  @extend .glass-panel;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  width: 100%;
+  max-width: 420px;
+  animation: floatIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.login-card h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #475569;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.9rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 0.75rem;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  background: white;
+  box-shadow: 0 0 0 4px rgba(200, 80, 192, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, #4158D0, #C850C0);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(200, 80, 192, 0.4);
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 25px rgba(200, 80, 192, 0.6);
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   4. GENERAL PAGE & FEED LAYOUT
+========================================= */
+.page-container {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header-box {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  border-left: 6px solid #C850C0;
+}
+
+.editor-box { border-left-color: #10b981; }
+.admin-box { border-left-color: #ef4444; }
+
+.interactive-header h1 {
+  font-size: 2.2rem;
+  color: #0f172a;
+}
+
+.highlight-text {
+  background: -webkit-linear-gradient(45deg, #4158D0, #C850C0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.create-post-box {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.create-post-box:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(31, 38, 135, 0.15);
+}
+
+.create-post-box textarea {
+  width: 100%;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 0.75rem;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.create-post-box textarea:focus {
+  background: white;
+  box-shadow: 0 0 0 4px rgba(200, 80, 192, 0.15);
+}
+
+/* =========================================
+   5. POST CARDS & ANIMATIONS
+========================================= */
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.posts-list h3 {
+  color: #1e293b;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(255,255,255,0.5);
+}
+
+.post-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid white;
+  border-radius: 1rem;
+  padding: 1.75rem;
+  box-shadow: 0 8px 25px rgba(31, 38, 135, 0.08);
+  opacity: 0; 
+  animation: slideUpFade 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  transition: all 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 15px 35px rgba(31, 38, 135, 0.15);
+}
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFCC70, #C850C0);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 10px rgba(200, 80, 192, 0.4);
+}
+
+.post-content {
+  color: #334155;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  padding: 0.5rem 0;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn-action {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 1);
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.like-btn:hover {
+  background: #fdf2f8;
+  color: #db2777;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  margin-left: auto; 
+}
+.delete-btn:hover {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
